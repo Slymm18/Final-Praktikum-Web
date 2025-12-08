@@ -1,0 +1,110 @@
+/* HERO SECTION */
+.hero {
+    /* Hapus background image, hanya pertahankan overlay */
+    background: rgba(0,0,0,0.55); /* Memberi lapisan gelap di atas video */
+    height: 100vh;
+    position: relative; /* Penting untuk penempatan absolut video */
+    overflow: hidden; /* Mencegah masalah tampilan */
+}
+
+/* Styling untuk Video Background */
+#video-bg {
+    position: absolute; /* Mengatur posisi absolut di dalam .hero */
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Menempatkan video di belakang konten */
+    transform: translate(-50%, -50%); /* Memposisikan video tepat di tengah */
+}
+
+/* Memastikan konten berada di atas video dan center */
+.content-overlay {
+    position: relative;
+    z-index: 1; 
+    height: 100%; /* Memastikan kontainer mengisi hero section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15vh; /* Tambahan padding agar konten tidak terlalu menempel */
+    padding-bottom: 15vh;
+    transform: scale();
+}
+
+  
+  .hero h1, .hero p {
+    color: #fff;
+  }
+
+  .hero h1:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+  }
+  
+  /* NAVBAR ACTIVE LINK STYLE */
+  .nav-link:hover {
+    color: #0d6efd;
+    font-weight: 500;
+  }
+  
+  /* CUSTOM BUTTON COLOR */
+  .btn-warning {
+    background-color: #f2b632;
+    border: none;
+    color: #111;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e4a518;
+  }
+  
+  /* SMOOTH SCROLL */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* FOOTER */
+  footer {
+    font-size: 0.9rem;
+  }
+  
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    overflow: hidden;
+  }
+
+  .card img {
+    transition: transform 0.4s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  }
+
+  .card:hover img {
+    transform: scale(1.1);
+  }
+
+  /* Tambahan agar teks tidak bergeser saat hover */
+  .card-body, .card-footer {
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+  }
+
+  .card:hover .card-body,
+  .card:hover .card-footer {
+    background-color: #f8f9fa;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+  }
+  .card:hover img {
+    transform: scale(1.08);
+  }
+  
