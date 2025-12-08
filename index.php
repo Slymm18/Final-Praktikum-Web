@@ -66,7 +66,7 @@ session_start();
 
     <p class="text-center mt-3">
       Belum punya akun?
-      <a href="register.php" class="text-primary fw-bold">Daftar Akun</a>
+      <a href="auth/register.php" class="text-primary fw-bold">Daftar Akun</a>
     </p>
   </div>
 
