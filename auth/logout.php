@@ -13,7 +13,7 @@ if (isset($_COOKIE['password'])) {
     setcookie('password', '', time() - 3600, '/');
 }
 
-// Redirect ke login
+// Redirect ke index (login baru)
 header("Location: index.php");
 exit;
 ?>
