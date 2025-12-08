@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Hapus semua session
 session_unset();
 session_destroy();
 
@@ -13,7 +12,7 @@ if (isset($_COOKIE['password'])) {
     setcookie('password', '', time() - 3600, '/');
 }
 
-// Redirect ke index (login baru)
-header("Location: index.php");
+// Redirect ke index utama (di root project)
+header("Location: ../index.php");
 exit;
 ?>
