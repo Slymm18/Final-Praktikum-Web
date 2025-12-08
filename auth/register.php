@@ -35,7 +35,7 @@ session_start();
 <div class="register-box">
   <h3 class="text-center mb-4 text-primary">Daftar Akun Baru</h3>
 
-  <form action="proses_register.php" method="post">
+  <form action="auth/proses_register.php" method="post">
     <div class="mb-3">
       <label class="form-label">Username</label>
       <input type="text" class="form-control" name="username" required>
@@ -50,7 +50,7 @@ session_start();
 
     <p class="text-center mt-3">
       Sudah punya akun?
-      <a href="index.php">Login</a>
+      <a href="../index.php">Login</a>
     </p>
   </form>
 </div>
