@@ -3,7 +3,7 @@ session_start();
 
 // Jika user belum login, paksa kembali ke login.php
 if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == "") {
-    header("Location: ../auth/login.php");
+    header("Location: index.php");
     exit;
 }
 ?>

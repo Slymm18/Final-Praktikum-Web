@@ -14,6 +14,6 @@ if (isset($_COOKIE['password'])) {
 }
 
 // Redirect ke login
-header("Location: login.php");
+header("Location: index.php");
 exit;
 ?>
