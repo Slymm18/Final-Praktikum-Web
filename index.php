@@ -48,7 +48,7 @@ session_start();
   <div class="login-box">
     <h2 class="text-center text-primary mb-4">Login Perumahan Arunika</h2>
 
-    <form action="proses_login.php" method="post">
+    <form action="auth/proses_login.php" method="post">
 
       <div class="mb-3">
         <label class="form-label">Username</label>
