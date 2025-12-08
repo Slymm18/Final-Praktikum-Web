@@ -50,7 +50,7 @@ session_start();
 
     <p class="text-center mt-3">
       Sudah punya akun?
-      <a href="index.php">Login</a>
+      <a href="../index.php">Login</a>
     </p>
   </form>
 </div>
