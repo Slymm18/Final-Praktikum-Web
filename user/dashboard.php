@@ -39,6 +39,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == "") {
   </div>
 </nav>
 
+
 <!-- Hero -->
 <section class="hero d-flex align-items-center text-center text-white">
     <video autoplay muted loop id="video-bg">
@@ -47,7 +48,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == "") {
     <div class="container content-overlay">
       <h1 class="display-4 fw-bold">Selamat Datang di Perumahan Arunika</h1>
       <p class="lead">Tempat terbaik untuk beristirahat dan menikmati kenyamanan.</p>
-      <a href="#rooms" class="btn btn-warning mt-3">Lihat Kamar</a>
+      <a href="#rooms" class="btn btn-warning mt-3">Lihat Unit Rumah</a>
     </div>
   </section>
 
@@ -56,7 +57,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == "") {
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6 mb-3 mb-md-0">
-        <img src="../assets/img/dena.jpg" class="img-fluid rounded" alt="Hotel">
+        <img src="../assets/img/dena.jpg" class="img-fluid rounded" alt="Perumahan">
       </div>
       <div class="col-md-6">
         <h2 class="fw-bold">Tentang Perumahan Arunika</h2>
@@ -177,6 +178,50 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == "") {
     </div>
   </div>
 </section>
+
+<?php
+include "../config/database.php";
+$user_id = $_SESSION['user_id'];
+
+$cekBooking = mysqli_query(
+    $connect,
+    "SELECT unit, status FROM booking 
+     WHERE user_id='$user_id' 
+     ORDER BY id DESC 
+     LIMIT 1"
+);
+?>
+
+<!-- STATUS PEMBELIAN USER -->
+<div class="container mt-5">
+  <h4 class="fw-bold mb-3">Status Pembelian Rumah</h4>
+
+  <?php if (mysqli_num_rows($cekBooking) == 0) { ?>
+    <div class="alert alert-warning">
+      Anda belum melakukan booking rumah.
+    </div>
+  <?php } else { 
+    $data = mysqli_fetch_assoc($cekBooking);
+  ?>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <p><b>Unit Rumah:</b> <?= $data['unit']; ?></p>
+
+        <p><b>Status:</b>
+          <?php if ($data['status'] == 'Pending') { ?>
+            <span class="badge bg-warning text-dark">Menunggu Persetujuan Admin</span>
+          <?php } elseif ($data['status'] == 'Diterima') { ?>
+            <span class="badge bg-success">Diterima</span>
+          <?php } elseif ($data['status'] == 'Ditolak') { ?>
+            <span class="badge bg-danger">Ditolak</span>
+          <?php } ?>
+        </p>
+      </div>
+    </div>
+
+  <?php } ?>
+</div>
 
 <!-- Footer -->
 <footer class="py-3 bg-dark text-white text-center">
