@@ -71,4 +71,11 @@ session_start();
   </div>
 
 </body>
+
+<?php if (isset($_GET['registered']) && $_GET['registered'] == 'success') { ?>
+<script>
+  alert("Akun Anda berhasil dibuat. Silakan login.");
+</script>
+<?php } ?>
+
 </html>
